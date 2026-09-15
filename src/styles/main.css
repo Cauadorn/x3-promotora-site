@@ -1,0 +1,20 @@
+/* Ponto de entrada do CSS — a ordem importa */
+@import "./tokens.css";
+@import "./base.css";
+@import "./components.css";
+
+@import "./layout/nav.css";
+
+@import "./sections/hero.css";
+@import "./sections/banks.css";
+@import "./sections/solutions.css";
+@import "./sections/platform.css";
+@import "./sections/presence.css";
+@import "./sections/why.css";
+@import "./sections/clt.css";
+@import "./sections/testimonials.css";
+@import "./sections/support.css";
+@import "./sections/blog.css";
+@import "./sections/cta.css";
+
+@import "./layout/footer.css";

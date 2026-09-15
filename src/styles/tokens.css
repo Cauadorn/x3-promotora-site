@@ -1,0 +1,44 @@
+/* =========================================================
+   Design tokens — X3 Promotora
+   Cores   : ink/navy (seções escuras) · paper (seções claras)
+             royal #0B4DB0 (marca) · cyan #27A8FF (destaque/tecnologia)
+   Tipos   : Montserrat 300 + 700/800 (títulos em contraste leve/negrito,
+             como nas artes do Instagram) · JetBrains Mono (rótulos técnicos)
+   Escala  : h1 clamp(2.9–6.4rem) · h2 clamp(2.1–3.7rem) · h3 1.25rem · corpo 1rem
+   Ritmo   : seções 88–140px · raio 20px · pílulas 999px
+   Breakpoints (em cada arquivo de seção): 1100px (tablet) · 760px (mobile)
+   ========================================================= */
+
+:root {
+  --ink: #020817;
+  --navy-950: #030d24;
+  --navy-900: #061735;
+  --navy-800: #0a2352;
+  --royal: #0b4db0;
+  --royal-700: #083a88;
+  --blue: #1668ff;
+  --cyan: #27a8ff;
+  --cyan-2: #86d3ff;
+  --paper: #eef2f7;
+  --paper-2: #e3e9f1;
+  --white: #fff;
+
+  --tx: #0a1630;
+  --tx-2: #4a5873;
+  --tx-inv: #eaf2ff;
+  --tx-inv-2: rgba(214, 229, 255, .66);
+  --line-d: rgba(130, 185, 255, .14);
+  --line-l: #d3dbe6;
+  --ok: #2fd69b;
+  --warn: #ffb547;
+
+  --f: "Montserrat", ui-sans-serif, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+
+  --r-sm: 12px;
+  --r: 20px;
+  --r-lg: 28px;
+  --ease: cubic-bezier(.2, .7, .1, 1);
+  --sec: clamp(88px, 11vw, 140px);
+  --gutter: clamp(20px, 4vw, 40px);
+}

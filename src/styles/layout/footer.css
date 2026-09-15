@@ -1,0 +1,18 @@
+/* ---------- Rodapé ---------- */
+.footer { background: var(--ink); color: var(--tx-inv-2); border-top: 1px solid var(--line-d); padding-top: 72px; font-size: .9rem; }
+.footer__grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1.1fr; gap: 40px; padding-bottom: 56px; }
+.footer__brand img { width: 84px; margin-bottom: 18px; }
+.footer__brand p + p { margin-top: 8px; }
+.footer .mono-label { margin-bottom: 16px; }
+.footer nav a, .footer__grid > div:last-child a { display: block; padding: 4px 0; transition: color .25s; }
+.footer a:hover { color: #fff; }
+.footer__bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; padding: 24px 0 32px; border-top: 1px solid var(--line-d); font-size: .8rem; }
+.footer__bottom div { display: flex; flex-wrap: wrap; gap: 20px; }
+
+@media (max-width: 1100px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 760px) {
+  .footer__grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,34 @@
+/* ---------- Soluções (bento) ---------- */
+.bento { display: grid; grid-template-columns: 1.25fr 1fr 1fr; grid-template-rows: auto auto; gap: 18px; }
+.pcard { position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-height: 330px; padding: 28px; border-radius: var(--r-lg); background: #fff; border: 1px solid rgba(211, 219, 230, .8); overflow: hidden; isolation: isolate; transition: transform .5s var(--ease), box-shadow .5s var(--ease), border-color .5s; }
+.pcard:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(10, 35, 82, .35); border-color: rgba(39, 168, 255, .45); }
+.pcard__ico { position: absolute; right: -8px; top: -6px; width: 170px; z-index: -1; transition: transform .8s var(--ease); filter: drop-shadow(0 20px 30px rgba(11, 77, 176, .28)); }
+.pcard:hover .pcard__ico { transform: translate(-6px, 6px) rotate(-6deg) scale(1.06); }
+.pcard__body .mono { color: var(--royal); font-size: .68rem; }
+.pcard h3 { margin-top: 8px; font-size: 1.3rem; line-height: 1.2; font-weight: 700; letter-spacing: -.01em; }
+.pcard p:not(.mono) { margin-top: 10px; font-size: .92rem; color: var(--tx-2); line-height: 1.55; }
+.pcard .chips { margin-top: 18px; }
+
+.pcard--xl { grid-row: span 2; min-height: 680px; color: var(--tx-inv); background: radial-gradient(90% 60% at 70% 20%, #1f78ff 0%, rgba(31, 120, 255, 0) 60%), linear-gradient(160deg, #0b4db0 0%, #06265f 55%, #041638 100%); border-color: rgba(120, 180, 255, .3); }
+.pcard--xl .pcard__ico { width: min(400px, 82%); left: 0; right: 0; margin-inline: auto; top: 40px; }
+.pcard--xl:hover .pcard__ico { transform: translateY(-10px) rotate(-4deg) scale(1.04); }
+.pcard--xl .mono { color: var(--cyan-2); }
+.pcard--xl h3 { font-size: clamp(1.8rem, 2.6vw, 2.4rem); }
+.pcard--xl p:not(.mono) { color: var(--tx-inv-2); font-size: 1rem; max-width: 30rem; }
+.pcard--xl .chips li { color: var(--tx-inv); border-color: rgba(190, 220, 255, .25); background: rgba(255, 255, 255, .06); }
+.pcard--xl .link-arrow { margin-top: 22px; }
+.pcard--xl .badge { position: absolute; top: 26px; left: 28px; }
+
+@media (max-width: 1100px) {
+  .bento { grid-template-columns: 1fr 1fr; }
+  .pcard--xl { grid-column: span 2; grid-row: auto; min-height: 520px; }
+  .pcard--xl .pcard__ico { width: 300px; left: auto; right: 24px; margin: 0; top: 20px; }
+}
+
+@media (max-width: 760px) {
+  .bento { grid-template-columns: 1fr; }
+  .pcard { min-height: 0; padding-top: 118px; }
+  .pcard__ico { width: 118px; top: 0; right: 8px; }
+  .pcard--xl { grid-column: auto; min-height: 0; padding-top: 250px; }
+  .pcard--xl .pcard__ico { width: 210px; left: 0; right: 0; margin-inline: auto; top: 44px; }
+}

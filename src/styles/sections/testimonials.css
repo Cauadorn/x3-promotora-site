@@ -1,0 +1,18 @@
+/* ---------- Depoimentos ---------- */
+.testi { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
+.tcard { display: flex; flex-direction: column; padding: 32px; border-radius: var(--r-lg); background: #fff; border: 1px solid rgba(211, 219, 230, .8); }
+.tcard__stars { color: var(--cyan); letter-spacing: .2em; font-size: .95rem; }
+.tcard blockquote { margin: 18px 0 30px; font-size: 1.12rem; line-height: 1.55; font-weight: 500; letter-spacing: -.01em; }
+.tcard figcaption { margin-top: auto; display: flex; align-items: center; gap: 12px; padding-top: 22px; border-top: 1px solid var(--line-l); }
+.tcard figcaption strong { display: block; font-size: .95rem; }
+.tcard figcaption span:not(.avatar) { font-size: .8rem; color: var(--tx-2); }
+.avatar { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--cyan), var(--royal)); color: #fff; font-weight: 700; font-size: .85rem; flex: none; }
+.tcard--feature { background: var(--navy-950); color: var(--tx-inv); border-color: transparent; transform: translateY(-14px); box-shadow: 0 40px 80px -40px rgba(3, 13, 36, .7); }
+.tcard--feature figcaption { border-color: var(--line-d); }
+.tcard--feature figcaption span:not(.avatar) { color: var(--tx-inv-2); }
+.testi__foot { margin-top: 44px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
+
+@media (max-width: 760px) {
+  .testi { grid-template-columns: 1fr; }
+  .tcard--feature { transform: none; }
+}

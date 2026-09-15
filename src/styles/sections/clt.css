@@ -1,0 +1,26 @@
+/* ---------- Destaque Crédito CLT ---------- */
+.clt { color: var(--tx-inv); background: radial-gradient(70% 90% at 0% 50%, rgba(39, 168, 255, .35), transparent 60%), linear-gradient(135deg, #0b4db0 0%, #073581 45%, #041a45 100%); }
+.clt::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(255, 255, 255, .05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .05) 1px, transparent 1px); background-size: 64px 64px; -webkit-mask-image: linear-gradient(90deg, transparent 30%, #000); mask-image: linear-gradient(90deg, transparent 30%, #000); pointer-events: none; }
+.clt .h2 strong { color: #fff; }
+.clt .sec-lead { color: var(--tx-inv-2); }
+.clt__grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(40px, 7vw, 110px); align-items: center; }
+.clt__media { position: relative; }
+.clt__frame { border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 4 / 5; border: 1px solid rgba(255, 255, 255, .2); box-shadow: 0 50px 100px -40px rgba(0, 0, 0, .7); }
+.clt__frame img { width: 100%; height: 115%; object-fit: cover; }
+.clt__card { position: absolute; right: -28px; bottom: 40px; max-width: 280px; padding: 20px 22px; border-radius: 18px; }
+.clt__card .mono { color: var(--cyan-2); font-size: .64rem; }
+.clt__card strong { display: block; margin-top: 6px; font-size: 1.1rem; line-height: 1.3; }
+
+.checks { margin: 32px 0 40px; display: grid; gap: 12px; }
+.checks li { position: relative; padding-left: 40px; font-weight: 500; }
+.checks li::before { content: ""; position: absolute; left: 0; top: .05em; width: 26px; height: 26px; border-radius: 8px; background: rgba(255, 255, 255, .12) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2386d3ff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 15px no-repeat; border: 1px solid rgba(255, 255, 255, .2); }
+
+@media (max-width: 1100px) {
+  .clt__grid { grid-template-columns: 1fr; }
+  .clt__media { max-width: 520px; }
+  .clt__card { right: 16px; }
+}
+
+@media (max-width: 760px) {
+  .clt__card { position: relative; right: auto; bottom: auto; margin: -60px 16px 0; }
+}

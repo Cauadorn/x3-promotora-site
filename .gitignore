@@ -1,0 +1,19 @@
+# dependências e build
+node_modules/
+dist/
+
+# logs
+*.log
+npm-debug.log*
+
+# ambiente
+.env
+.env.*
+!.env.example
+
+# sistema / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+*.swp
