@@ -1,6 +1,6 @@
 # X3 Promotora — Site institucional
 
-Site one-page da **X3 Promotora** (crédito consignado, Crédito CLT, cartões, empréstimo pessoal e FGTS), com identidade visual baseada nas artes do Instagram: azul royal + ciano, superfícies de vidro e linguagem tecnológica.
+Site da **X3 Promotora** (home + página Seja Parceiro) (crédito consignado, Crédito CLT, cartões, empréstimo pessoal e FGTS), com identidade visual baseada nas artes do Instagram: azul royal + ciano, superfícies de vidro e linguagem tecnológica.
 
 - **Stack:** HTML + CSS + JavaScript (ES Modules) com [Vite](https://vite.dev)
 - **Animações:** [GSAP](https://gsap.com) + ScrollTrigger e [Lenis](https://lenis.darkroom.engineering) (rolagem suave)
@@ -26,12 +26,15 @@ npm run preview  # testa o /dist localmente
 
 ```
 .
-├── index.html                  # marcação de todas as seções
-├── vite.config.js
+├── index.html                  # home (todas as seções)
+├── seja-parceiro-x3-promotora/
+│   └── index.html              # página Seja Parceiro (cadastro PF/PJ)
+├── vite.config.js              # base relativa + entradas das páginas
 ├── package.json
 ├── .github/workflows/deploy.yml  # build + publicação no GitHub Pages
 └── src/
-    ├── main.js                 # ponto de entrada: inicializa os módulos
+    ├── main.js                 # entrada da home
+    ├── partner.js              # entrada da página Seja Parceiro
     ├── data/
     │   └── presence.js         # ⚙️ estados ativos no mapa, conexões e textos do painel
     ├── js/
@@ -42,6 +45,7 @@ npm run preview  # testa o /dist localmente
     │   ├── scroll-animations.js# reveals e parallax
     │   ├── pointer-effects.js  # spotlight nos cards, botões magnéticos
     │   ├── marquee.js          # faixa de bancos
+    │   ├── partner-form.js     # formulário de parceiro: PF/PJ, máscaras, CPF/CNPJ, anexos, envio
     │   ├── dashboard.js        # simulação animada do Full Consig
     │   └── brazil-map.js       # mapa interativo
     ├── styles/
@@ -50,7 +54,8 @@ npm run preview  # testa o /dist localmente
     │   ├── base.css            # reset, utilitários, padrão de seção
     │   ├── components.css      # botões, chips, badges, vidro, preloader
     │   ├── layout/             # nav.css, footer.css
-    │   └── sections/           # um arquivo por seção (com seus breakpoints)
+    │   ├── sections/           # um arquivo por seção da home (com seus breakpoints)
+    │   └── pages/partner.css   # estilos exclusivos da página Seja Parceiro
     └── assets/img/             # fotos, ícones 3D, logo e favicon
 ```
 
@@ -86,6 +91,38 @@ Links ainda como `#` (a definir): *Área do parceiro*, *Ver avaliações no Goog
 Substitua mantendo o mesmo nome de arquivo. Fotos em JPG (até ~1920px), ícones em PNG transparente.
 
 **Acessibilidade de movimento** → com "reduzir movimento" ativo no sistema, rolagem suave, parallax e animações em loop são desativados automaticamente.
+
+---
+
+## Página Seja Parceiro — `/seja-parceiro-x3-promotora/`
+
+Todos os botões "Seja parceiro" da home levam para esta página. Estrutura baseada na página de parceiros da CredFranco, com a copy do briefing (seção 5):
+
+| # | Seção | id |
+|---|-------|----|
+| — | Hero | — |
+| 01 | Por que a X3? | `por-que` |
+| 02 | Portfólio | `portfolio` |
+| 03 | Atendimento é parceria | `atendimento` |
+| 04 | Requisitos (CNAEs + certificações) | `requisitos` |
+| 05 | Cadastro de parceiro (formulário PF/PJ) | `cadastro` |
+| 06 | Onde estamos (mapa) | `presenca` |
+
+Link direto já com Pessoa Jurídica selecionada: `seja-parceiro-x3-promotora/?tipo=pj#cadastro`
+
+### Ativar o envio do formulário
+O formulário valida tudo (CPF/CNPJ, telefone, CEP, anexos até 10 MB), mas **só envia quando houver destino**. No `<form id="partnerForm">`, preencha:
+
+```html
+<form ... data-endpoint="https://seu-endpoint-aqui">
+```
+
+O envio é um `POST` `multipart/form-data` com todos os campos e anexos (serve para Formspree, Getform, n8n, Make, API própria etc.). Depois de configurar, remova o bloco `<div class="todo">` ("A definir pela X3") do HTML.
+
+### Pendências da página (marcadas no layout)
+- [ ] Destino dos cadastros (e-mail, CRM ou sistema)
+- [ ] Links oficiais de Termos de Uso e Política de Privacidade
+- [ ] Link da Área do Parceiro (Portal X3: gestao.x3promotora.app.br)
 
 ---
 

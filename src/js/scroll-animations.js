@@ -4,9 +4,22 @@ import { $$, reduceMotion } from './utils.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
-/** Reveals, parallax e animações atreladas à rolagem. */
-export function initScrollAnimations() {
+/** Elementos com data-reveal entram em lote ao aparecer na tela (usado em todas as páginas). */
+export function initReveals() {
   window.addEventListener('load', () => ScrollTrigger.refresh());
+  if (reduceMotion) return;
+
+  ScrollTrigger.batch('[data-reveal]', {
+    start: 'top 88%',
+    once: true,
+    onEnter: (els) => gsap.fromTo(els, { y: 48, opacity: 0 }, { y: 0, opacity: 1, duration: 1.1, ease: 'expo.out', stagger: 0.08, overwrite: true }),
+  });
+  gsap.set('[data-reveal]', { opacity: 0 });
+}
+
+/** Home: reveals + parallax e animações atreladas à rolagem. */
+export function initScrollAnimations() {
+  initReveals();
   if (reduceMotion) return;
 
   // hero: parallax da imagem e saída do conteúdo
@@ -18,14 +31,6 @@ export function initScrollAnimations() {
     yPercent: -12, opacity: 0.2, ease: 'none',
     scrollTrigger: { trigger: '.hero', start: 'center center', end: 'bottom top', scrub: true },
   });
-
-  // elementos com data-reveal entram em lote
-  ScrollTrigger.batch('[data-reveal]', {
-    start: 'top 88%',
-    once: true,
-    onEnter: (els) => gsap.fromTo(els, { y: 48, opacity: 0 }, { y: 0, opacity: 1, duration: 1.1, ease: 'expo.out', stagger: 0.08, overwrite: true }),
-  });
-  gsap.set('[data-reveal]', { opacity: 0 });
 
   // Crédito CLT: máscara que abre + parallax da foto
   gsap.fromTo('.clt__frame img', { yPercent: -10 }, {
