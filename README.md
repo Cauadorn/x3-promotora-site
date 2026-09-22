@@ -96,17 +96,14 @@ Substitua mantendo o mesmo nome de arquivo. Fotos em JPG (até ~1920px), ícones
 
 ## Página Seja Parceiro — `/seja-parceiro-x3-promotora/`
 
-Todos os botões "Seja parceiro" da home levam para esta página. Estrutura baseada na página de parceiros da CredFranco, com a copy do briefing (seção 5):
+Todos os botões "Seja parceiro" da home levam para esta página. Página deliberadamente curta, com foco no formulário (referência: CredFranco). Argumentos, portfólio, atendimento e requisitos ficam em páginas próprias.
 
-| # | Seção | id |
-|---|-------|----|
-| — | Hero | — |
-| 01 | Por que a X3? | `por-que` |
-| 02 | Portfólio | `portfolio` |
-| 03 | Atendimento é parceria | `atendimento` |
-| 04 | Requisitos (CNAEs + certificações) | `requisitos` |
-| 05 | Cadastro de parceiro (formulário PF/PJ) | `cadastro` |
-| 06 | Onde estamos (mapa) | `presenca` |
+| Seção | id |
+|-------|----|
+| Abertura curta (H1 + texto) | — |
+| Cadastro de parceiro (formulário PF/PJ, sobreposto ao fim da abertura) | `cadastro` |
+| Onde estamos (mapa) | `presenca` |
+| Tem dúvidas? (contatos + CTA de volta ao cadastro) | `duvidas` |
 
 Link direto já com Pessoa Jurídica selecionada: `seja-parceiro-x3-promotora/?tipo=pj#cadastro`
 
