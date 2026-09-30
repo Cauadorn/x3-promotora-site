@@ -1,6 +1,6 @@
 import { $, $$, reduceMotion } from './utils.js';
 
-const TRACKED_SECTIONS = ['solucoes', 'plataforma', 'presenca', 'diferenciais', 'blog'];
+const TRACKED_SECTIONS = ['solucoes', 'plataforma', 'presenca', 'diferenciais'];
 
 export function initNav(lenis) {
   const nav = $('#nav');

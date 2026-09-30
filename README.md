@@ -72,7 +72,6 @@ npm run preview  # testa o /dist localmente
 | — | Crédito CLT | `clt` | `sections/clt.css` |
 | 05 | Depoimentos | `depoimentos` | `sections/testimonials.css` |
 | 06 | Atendimento | `atendimento` | `sections/support.css` |
-| 07 | Blog | `blog` | `sections/blog.css` |
 | — | CTA final | `parceiro` | `sections/cta.css` |
 
 ---
@@ -85,7 +84,7 @@ Adicione/remova siglas em `ACTIVE_STATES`. Os contadores "UFs com operação ati
 **Cores e fontes** → `src/styles/tokens.css`
 
 **Textos, links e bancos** → `index.html`
-Links ainda como `#` (a definir): *Área do parceiro*, *Ver avaliações no Google*, *Blog/artigos*, *Políticas*.
+Links ainda como `#` (a definir): *Área do parceiro*, *Ver avaliações no Google* e *Políticas*.
 
 **Imagens** → `src/assets/img/`
 Substitua mantendo o mesmo nome de arquivo. Fotos em JPG (até ~1920px), ícones em PNG transparente.
@@ -174,7 +173,7 @@ Configure em **Settings → Pages → Custom domain** (ou no painel da Vercel/Ne
 - [ ] Confirmar números do hero: 15+ bancos, 8 linhas, 7 UFs, 108x
 - [ ] Confirmar lista de bancos (Banco Master foi retirado — liquidado pelo BC em nov/2025)
 - [ ] Validar depoimentos e a frase "a promotora que mais cresce no Brasil"
-- [ ] Definir URLs: Área do parceiro, Google Reviews, blog e políticas
+- [ ] Definir URLs: Área do parceiro, Google Reviews e políticas
 - [ ] Tela do Full Consig é ilustrativa — trocar por print real se desejado
 
 ---
